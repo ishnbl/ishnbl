@@ -1,1 +1,884 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Electrical Engineering Student</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #000000;
+            color: #ffffff;
+            padding: 3rem 5%;
+            text-align: center;
+            border-bottom: 4px solid #000000;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+        }
+
+        header .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            background: #ffffff;
+            border-bottom: 2px solid #000000;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 2rem;
+            color: #000000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+
+        nav a:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #000000;
+            display: inline-block;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333333;
+            max-width: 900px;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        /* Skills */
+        .skills-category {
+            margin-bottom: 2rem;
+        }
+
+        .skills-category h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background: #000000;
+            color: #ffffff;
+            padding: 0.4rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 2px solid #000000;
+            transition: all 0.2s;
+        }
+
+        .skill-item:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* Experience Items */
+        .experience-item,
+        .education-item,
+        .project-item {
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+            border-left: 3px solid #000000;
+        }
+
+        .experience-item:last-child,
+        .education-item:last-child,
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .item-date {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #666666;
+            white-space: nowrap;
+        }
+
+        .item-subtitle {
+            font-size: 1.05rem;
+            color: #333333;
+            margin-bottom: 0.8rem;
+            font-style: italic;
+        }
+
+        .item-description {
+            color: #444444;
+            line-height: 1.7;
+        }
+
+        .item-description ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .item-description li {
+            margin-bottom: 0.4rem;
+        }
+
+        .tech-stack {
+            margin-top: 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .tech-tag {
+            background: #f5f5f5;
+            border: 1px solid #000000;
+            padding: 0.2rem 0.7rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-item {
+            border: 2px solid #000000;
+            padding: 1.5rem;
+            background: #ffffff;
+            transition: all 0.2s;
+        }
+
+        .cert-item:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .cert-item h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .cert-item p {
+            font-size: 0.95rem;
+            color: inherit;
+        }
+
+        /* Achievements */
+        .achievements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievements-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 1.05rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .achievements-list li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+
+        .achievements-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            color: #ffffff;
+            font-size: 1.5rem;
+            transition: opacity 0.2s;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Print Button */
+        .print-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
+
+        .print-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hamburger Menu for Mobile */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 1rem;
+            color: #000000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 2rem 4%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 5%;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .contact-info {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #ffffff;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 1rem;
+                text-align: center;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .container {
+                padding: 2rem 5%;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .projects-grid {
+                gap: 2rem;
+            }
+
+            .print-btn {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .skills-list {
+                gap: 0.3rem;
+            }
+
+            .skill-item {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.8rem;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header .subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 0.8rem;
+                align-items: center;
+            }
+
+            .container {
+                padding: 1.5rem 4%;
+            }
+
+            section {
+                margin-bottom: 3rem;
+                padding-bottom: 2rem;
+            }
+
+            .experience-item,
+            .education-item,
+            .project-item {
+                padding-left: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .item-title {
+                font-size: 1.2rem;
+            }
+
+            .tech-stack {
+                gap: 0.3rem;
+            }
+
+            .tech-tag {
+                font-size: 0.8rem;
+                padding: 0.2rem 0.5rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            nav,
+            .print-btn,
+            .nav-toggle {
+                display: none !important;
+            }
+
+            header {
+                background: #ffffff;
+                color: #000000;
+                border-bottom: 3px solid #000000;
+                padding: 1rem 0;
+            }
+
+            section {
+                page-break-inside: avoid;
+                margin-bottom: 2rem;
+            }
+
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+
+            .container {
+                padding: 0;
+                max-width: none;
+            }
+
+            .print-btn {
+                display: none !important;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Additional responsive improvements */
+        @media (max-width: 768px) {
+            .achievements-list li {
+                padding-left: 1.5rem;
+                font-size: 1rem;
+            }
+
+            .summary {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Ishaan Bansal</h1>
+        <div class="subtitle">Electrical Engineering Student | AI/ML Developer | Blockchain Engineer</div>
+        <div class="contact-info">
+            <span><i class="fas fa-map-marker-alt"></i> IIT Roorkee, India</span>
+            <a href="mailto:ishaan_b@ee.iitr.ac.in"><i class="fas fa-envelope"></i> ishaan_b@ee.iitr.ac.in</a>
+            <a href="tel:+918130652157"><i class="fas fa-phone"></i> +91 81306 52157</a>
+            <a href="https://github.com/ISHNBL"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul>
+            <li><a href="#summary">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+        
+            <li><a href="blog_about_me.html">Blog/About Me</a></li>
+        
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Professional Summary -->
+        <section id="summary" class="fade-in">
+            <h2 class="section-title">About Me</h2>
+            <p class="summary">
+                I am Ishaan Bansal, an undergraduate freshman pursuing Electrical Engineering at IIT Roorkee. I am a passionate engineer driven by a curiosity to solve problems that
+                generate a positive impact in the world. I am passionate towards Programming, Software Development, Cybersecurity, AI/ML and Blockchains. I have experience using various Programming Languages and Tools, like Python, Javascript, Golang, C++, Docker etc.
+                I am a keen learner, who likes to grapple with complex concepts and ideas. I also have a good academic track record: I scored 96% in Class X CBSE, 96.4% in Class XII CBSE, and I got an All India Rank-1686 in JEE Advanced.
+            </p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section id="skills" class="fade-in">
+            <h2 class="section-title">Technical Skills</h2>
+
+            <div class="skills-category">
+                <h3>Programming Languages</h3>
+                <div class="skills-list">
+                    <span class="skill-item">C++</span>
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">Go</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>AI/ML & Deep Learning</h3>
+                <div class="skills-list">
+                    <span class="skill-item">PyTorch</span>
+                    <span class="skill-item">TensorFlow</span>
+                    <span class="skill-item">CNNs</span>
+                    <span class="skill-item">RNNs</span>
+                    <span class="skill-item">Neural Networks</span>
+                    <span class="skill-item">CUDA</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Blockchain & Distributed Systems</h3>
+                <div class="skills-list">
+                    <span class="skill-item">Ethereum</span>
+                    <span class="skill-item">Smart Contracts</span>
+                    <span class="skill-item">Proof-of-Work</span>
+                    <span class="skill-item">ECDSA</span>
+                    <span class="skill-item">Cryptography</span>
+                    <span class="skill-item">Docker</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Tools & Technologies</h3>
+                <div class="skills-list">
+                    <span class="skill-item">Linux/WSL</span>
+                    <span class="skill-item">Git/GitHub</span>
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">VirtualBox</span>
+                    <span class="skill-item">Metasploit</span>
+                    <span class="skill-item">VS Code</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="fade-in">
+            <h2 class="section-title">Experience</h2>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <h3 class="item-title">AI/ML Research & Development</h3>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li>Studied various neural network architectures like CNNs, RNNs, LSTM etc</li>
+                        <li>Learned about high performance computing using PyTorch, C++ etc</li>
+                        <li>Read papers of industry pioneers like Yann LeCun and Ilya Sutskever</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">CUDA</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">C++</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <h3 class="item-title">Blockchain Development</h3>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li>Built a simple proof-of-Work blockchain implementation with ECDSA cryptography using secp256k1 curve</li>
+                        <li>Understood cryptography and how algorithms work to keep the internet secure</li>
+                        <li>Learned about distributed systems and networking</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">ECDSA</span>
+                        <span class="tech-tag">Networking</span>
+                        <span class="tech-tag">Ethereum</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="fade-in">
+            <h2 class="section-title">Education</h2>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <h3 class="item-title">Bachelor of Technology in Electrical Engineering</h3>
+                    <span class="item-date">2025 - 2029</span>
+                </div>
+                <div class="item-subtitle">Indian Institute of Technology, Roorkee</div>
+                <div class="item-description">
+                    <ul>
+                        <li>Relevant Coursework: Soft Skills, Linear Algebra, Calculus, Circuit Theory, Semiconductor Devices, Data Structures, Algorithms</li>
+                        <li>Active in technical clubs and hackathon participation</li>
+                        <li>Focus on AI/ML applications in electrical engineering</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <h3 class="item-title">JEE Advanced</h3>
+                    <span class="item-date">2025</span>
+                </div>
+                <div class="item-subtitle">All India Rank: 1686</div>
+                <div class="item-description">
+                    Strong foundation in mathematics, physics, and chemistry. Demonstrated problem-solving 
+                    skills and analytical thinking capabilities. Achieved 99.9+ percentile performance.
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <h3 class="item-title">Senior Secondary Education (Class XII)</h3>
+                    <span class="item-date">2025</span>
+                </div>
+                <div class="item-subtitle">CBSE - 96.4%</div>
+                <div class="item-description">
+                    Specialized in Physics, Chemistry, Mathematics
+                    Maintained consistent academic excellence throughout high school.
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section id="achievements" class="fade-in">
+            <h2 class="section-title">Key Achievements</h2>
+            <ul class="achievements-list">
+                <li>All India Rank 1686 in JEE Advanced 2025 (99.9+ percentile)</li>
+                <li>96.4% in CBSE Class XII and 96% in CBSE Class X</li>
+                <li>Implemented custom blockchain with proof-of-work consensus mechanism</li>
+                <li>Active participant in competitive programming and CTF competitions</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/ISHNBL" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:ishaan_b@ee.iitr.ac.in" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+918130652157" aria-label="Phone"><i class="fas fa-phone"></i></a>
+        </div>
+        <p>&copy; 2025 Ishaan Bansal. All Rights Reserved</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Last Updated: October 2025</p>
+    </footer>
+
+    <!-- Print Button -->
+    <button class="print-btn" onclick="window.print()" aria-label="Download PDF">
+        <i class="fas fa-download"></i> Download PDF
+    </button>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            const navList = document.querySelector('nav ul');
+            navList.classList.toggle('active');
+
+            // Change icon
+            const icon = this.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navList = document.querySelector('nav ul');
+                const navToggle = document.querySelector('.nav-toggle');
+                const icon = navToggle.querySelector('i');
+
+                navList.classList.remove('active');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.background = '';
+                link.style.color = '';
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.style.background = '#000000';
+                    link.style.color = '#ffffff';
+                }
+            });
+        });
+
+        // Handle window resize for mobile menu
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                const navList = document.querySelector('nav ul');
+                const navToggle = document.querySelector('.nav-toggle');
+                const icon = navToggle.querySelector('i');
+
+                navList.classList.remove('active');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>
