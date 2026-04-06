@@ -1,16 +1,15 @@
-## Hello World 🌎 🌎 
+# Hi there 👋
+I'm a first-year ECE student at IIT Roorkee. I enjoy figuring out how things work under the hood and currently I am exploring Deep Learning and Software Development. 
 
-<!--
-**ishnbl/ishnbl** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I am a part of SDSLabs and VLG at IIT Roorkee
 
-Here are some ideas to get you started:
+## 🛠️ What I'm working with
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+* **Languages:** C++, Python
+* **Interests:** Systems Programming, CUDA, PyTorch, Deep Learning
+
+## 🚀 Some things I've built
+
+* **[FireDB]** - A KNN Vector Database written in C++ with some CUDA acceleration.
+* **[lib_coin]** - A simplified, toy blockchain implementation in C++ to better understand how they function.
+* **[AiVantage]** - A time-series prediction project put together using PyTorch.
