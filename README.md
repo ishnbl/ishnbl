@@ -13,3 +13,6 @@ I am a part of SDSLabs and VLG at IIT Roorkee
 * **[FireDB]** - A KNN Vector Database written in C++ with some CUDA acceleration.
 * **[lib_coin]** - A simplified, toy blockchain implementation in C++ to better understand how they function.
 * **[AiVantage]** - A time-series prediction project put together using PyTorch.
+* **[LRLBench]** - A pipeline to evaluate Language Models on Competitive Programming tasks by creating a synthetic dataset
+  
+
