@@ -1,12 +1,10 @@
 # Hi there 👋
-I'm a first-year ECE student at IIT Roorkee. I enjoy figuring out how things work under the hood and currently I am exploring Deep Learning and Software Development. 
-
-I am a part of SDSLabs and VLG at IIT Roorkee
+I'm a second-year ECE student at IIT Roorkee. I enjoy figuring out how things work under the hood and currently I am exploring AI Safety, Evaluations, Post-Training and Infra.
+I am a part of SDSLabs at IIT Roorkee
 
 ## 🛠️ What I'm working with
 
-* **Languages:** C++, Python
-* **Interests:** Systems Programming, CUDA, PyTorch, Deep Learning
+* **Languages:** C++, Python, Go
 
 ## 🚀 Some things I've built
 
